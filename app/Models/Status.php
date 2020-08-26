@@ -10,4 +10,10 @@ class Status extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function feed()
+    {
+        return $this->statuses()
+                    ->orderBy('created_at', 'desc');
+    }
 }
